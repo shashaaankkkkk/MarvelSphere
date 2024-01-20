@@ -30,10 +30,12 @@ urlpatterns = [
     path('login', auth_view.Signin, name='signin'),
     path('logout/',auth_view.signout),
     path("signup",auth_view.signup),
-    path("",core_view.index),
+    path("",core_view.subjects_and_schedules),
     path("api/",api_view.hello),
     path('rooms', real_view.rooms, name='rooms'),
     path('room/<int:pk>/', real_view.room, name='room'),
     path('code-editor/', real_view.code_editor_view),
+   # path('create/', core_view.create_class, name='create_class'),
+    #path('list/', core_view.class_list, name='class_list'),
 
 ]

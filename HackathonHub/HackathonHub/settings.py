@@ -28,11 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['hackathonhub.pythonanywhere.com','127.0.0.1','10.25.1.89',"192.168.31.74","10.100.69.87"]
 
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': "channels.layers.InMemoryChannelLayer"
-    }
-}
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,7 +44,7 @@ INSTALLED_APPS = [
     "authentication",
     "api",
     "rest_framework",
-    "channels",
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -131,6 +127,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+STATICFILES_DIRS=["/static/"]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
