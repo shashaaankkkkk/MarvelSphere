@@ -11,7 +11,7 @@ def Signin(request):
         pword=request.POST['password']
 
         user=authenticate(username=uname,password=pword)
-        person=User.objects.get()
+        #person=User.objects.get()
 
 
         if user is not None:

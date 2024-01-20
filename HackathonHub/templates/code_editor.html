@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Code Editor</title>
+    <!-- Include Monaco Editor -->
+    <script src="https://unpkg.com/monaco-editor@latest/min/vs/loader.js"></script>
+</head>
+<body>
+    <script src="https://unpkg.com/monaco-editor@latest/min/vs/loader.js"></script>
+    <script>
+        require.config({ paths: { 'vs': 'https://unpkg.com/monaco-editor@latest/min/vs' }});
+        require(['vs/editor/editor.main'], function() {
+            var roomCode = prompt("Enter Room Code:");
+
+            var editor = monaco.editor.create(document.getElementById('editor'), {
+                value: "", // Initial code content
+                language: 'python', // Set your preferred language
+                theme: 'vs-dark',   // Set your preferred theme
+                automaticLayout: true
+            });
+
+            var codeSocket = new WebSocket('ws://' + window.location.host + `/ws/code-editor/${roomCode}/`);
+
+            codeSocket.onmessage = function(e) {
+                var data = JSON.parse(e.data);
+                editor.setValue(data.code);
+            };
+
+            editor.getModel().onDidChangeContent(function() {
+                codeSocket.send(JSON.stringify({
+                    'code': editor.getValue()
+                }));
+            });
+        });
+    </script>
+    <div id="editor" style="height: 600px;"></div>
+</body>
+</html>

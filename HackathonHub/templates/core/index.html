@@ -1,5 +1,23 @@
 {% extends "core/base.html" %}
+
 {% block content %}
+<div>
+    <div class="bg-white-100 min-h-screen flex flex-col items-center justify-center">
+   
+      
+    <div id="alert-additional-content-1" class="p-4 mb-4 text-blue-800 border border-blue-300 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 dark:border-blue-800" role="alert">
+        <div class="flex items-center">
+            <svg class="flex-shrink-0 w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+            </svg>
+            <span class="sr-only">In</span>
+            <h3 class="text-lg font-medium">Account Succesfully Created</h3>
+        </div>
+        <div class="mt-2 mb-4 text-sm">
+            More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
+        </div>
+    </div>
+   
 
 
 <div class="container">
@@ -7,9 +25,11 @@
     <button class="waves-effect waves-light btn"><a href="/logout" style="color: inherit;">Logout</a></button>
 </div>
 
+<h1>hellos</h1></div>
 {% endblock content %}
 {% block js %}
-  
-<!-- Material-UI JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
+
 {% endblock js %}

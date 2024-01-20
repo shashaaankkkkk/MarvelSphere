@@ -26,12 +26,17 @@ SECRET_KEY = "django-insecure-0z#iqsjnsb2+t$=*!-@q%%w366y6joie73*dz1%69auffmvvod
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hackathonhub.pythonanywhere.com','127.0.0.1','10.25.1.89',"192.168.31.74"]
+ALLOWED_HOSTS = ['hackathonhub.pythonanywhere.com','127.0.0.1','10.25.1.89',"192.168.31.74","10.100.69.87"]
 
-
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': "channels.layers.InMemoryChannelLayer"
+    }
+}
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -43,6 +48,7 @@ INSTALLED_APPS = [
     "authentication",
     "api",
     "rest_framework",
+    "channels",
 ]
 
 MIDDLEWARE = [
@@ -73,7 +79,9 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "HackathonHub.wsgi.application"
+
+ASGI_APPLICATION = "HackathonHub.asgi.application"
+
 
 
 # Database
