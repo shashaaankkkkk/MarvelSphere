@@ -1,0 +1,10 @@
+__pycache__
+api/__pycache__
+api/migrations
+authentication/__pycache__
+authentication/migrations
+core/__pycache__
+core/migrations
+HackathonHub/__pycache__
+real_time_collaboration/__pycache__
+real_time_collaboration/migrations
