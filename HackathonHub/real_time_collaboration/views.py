@@ -17,4 +17,4 @@ def room(request, pk):
 from django.shortcuts import render
 
 def code_editor_view(request):
-    return render(request, 'code_editor.html')
+    return render(request, 'chat_rooms.html')

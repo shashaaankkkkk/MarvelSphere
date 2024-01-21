@@ -35,6 +35,9 @@ urlpatterns = [
     path('rooms', real_view.rooms, name='rooms'),
     path('room/<int:pk>/', real_view.room, name='room'),
     path('code-editor/', real_view.code_editor_view),
+    path("assigment", core_view.assigments),
+    path('chat/', core_view.chat, name='chat'),
+    path("calendar",core_view.calendra)
    # path('create/', core_view.create_class, name='create_class'),
     #path('list/', core_view.class_list, name='class_list'),
 

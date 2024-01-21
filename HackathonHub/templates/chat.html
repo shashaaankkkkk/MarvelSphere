@@ -1,0 +1,54 @@
+<!-- chat_project/chat_app/templates/chat_app/chat.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat App</title>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-messages"></div>
+        <div id="user-input-container">
+            <input type="text" id="user-input" />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById('user-input').value;
+            document.getElementById('chat-messages').innerHTML += '<p>User: ' + userInput + '</p>';
+            document.getElementById('user-input').value = '';
+
+            // Send the user input to the server and get the response
+            fetch('', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: 'user_input=' + userInput
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('chat-messages').innerHTML += '<p>ChatGPT: ' + data.response + '</p>';
+            });
+        }
+
+        // Function to get the CSRF token
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
+</body>
+</html>

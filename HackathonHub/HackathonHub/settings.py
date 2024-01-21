@@ -26,13 +26,14 @@ SECRET_KEY = "django-insecure-0z#iqsjnsb2+t$=*!-@q%%w366y6joie73*dz1%69auffmvvod
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hackathonhub.pythonanywhere.com','127.0.0.1','10.25.1.89',"192.168.31.74","10.100.69.87"]
+ALLOWED_HOSTS = ['hackathonhub.pythonanywhere.com','127.0.0.1','10.25.1.89',"192.168.31.74","10.100.69.87",'localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'daphne',
+    'channels',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    #  "channels.middleware.WebSocketMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -90,6 +92,12 @@ DATABASES = {
     }
 }
 
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
