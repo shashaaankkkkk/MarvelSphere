@@ -1,11 +1,11 @@
-# HackathonHub
+# MarvelSphere
 
-HackathonHub is an open-source platform built with Django aimed at managing hackathons, facilitating real-time coding collaboration among team members, and streamlining the process of hackathon participation.
+MarvelSphere is an open-source platform developed with Django in InnovateNSUT 2024's Hackathon. It streamlines teaching processes, offering user authentication, class management, and real-time coding collaboration. The scalable architecture ensures secure authentication and effective communication.
 
 ## Features
 
 - **User Authentication**: Allow users to register, log in, and manage their profiles.
-- **Hackathon Management**: Create, join, and manage hackathons. Manage teams, submissions, and judging.
+- **Class Management**: Create, join, and manage hackathons. Manage teams, submissions, and judging.
 - **Real-time Collaboration**: Enable real-time code editing, team chat, and version control for codebases.
 - **Secure Authentication**: Utilizes Django's built-in authentication or third-party authentication libraries.
 - **Scalable Architecture**: Implements a robust architecture for handling real-time communication and collaboration.
