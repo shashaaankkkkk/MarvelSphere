@@ -42,6 +42,19 @@ Happy Contributing! 🚀
 ### License
 
 This project is licensed under the [MIT License](LICENSE).
+## ScreenShots
+
+### login 
+![Login](https://github.com/shashaaankkkkk/MarvelSphere/assets/61085117/a2e2aa25-5e0c-4994-b600-f67508ad2e44)
+
+### HomeScreen
+![Marvel_sphere_homeScreen](https://github.com/shashaaankkkkk/MarvelSphere/assets/61085117/9ba6024e-6bcb-4d01-b5c6-51478c89bb4b)
+### CodeEditor
+![code](https://github.com/shashaaankkkkk/MarvelSphere/assets/61085117/f0913d8a-54fb-49bc-9ee2-892d23835a49)
+### Assigment Submission
+![assigment](https://github.com/shashaaankkkkk/MarvelSphere/assets/61085117/daab873e-f8b0-42ba-8391-993e89c99a8a)
+### Calendar
+![calender](https://github.com/shashaaankkkkk/MarvelSphere/assets/61085117/e1174c12-eb86-41ae-8a64-d5f495a78d3d)
 
 
 
