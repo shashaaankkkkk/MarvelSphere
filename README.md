@@ -45,7 +45,8 @@ This project is licensed under the [MIT License](LICENSE).
 ## ScreenShots
 
 ### login 
-![Login](https://github.com/shashaaankkkkk/MarvelSphere/assets/61085117/a2e2aa25-5e0c-4994-b600-f67508ad2e44)
+<img width="1494" alt="login" src="https://github.com/shashaaankkkkk/MarvelSphere/assets/61085117/df7b9a09-a41f-4da1-bf75-c77dfca350a9">
+
 
 ### HomeScreen
 ![Marvel_sphere_homeScreen](https://github.com/shashaaankkkkk/MarvelSphere/assets/61085117/9ba6024e-6bcb-4d01-b5c6-51478c89bb4b)
