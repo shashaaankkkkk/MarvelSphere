@@ -1,7 +1,7 @@
 import textwrap
 from IPython.display import Markdown
 import google.generativeai as genai
-from .models import ClassSchedule , Subject 
+from .models import ProjectSchedule , project 
 from django.shortcuts import render , redirect
 from django.http import HttpResponse ,JsonResponse
 from django.contrib.auth.decorators import login_required
@@ -55,15 +55,15 @@ def index(request):
     return  render(request,"core/index.html")
 
 
-from .models import Subject, ClassSchedule, Faculty
+from .models import project, ProjectSchedule, Faculty
 
 @login_required
 def subjects_and_schedules(request):
     # Fetch all subjects
-    subjects = Subject.objects.all()
+    subjects = project.objects.all()
 
     # Fetch all class schedules
-    class_schedules = ClassSchedule.objects.all()
+    class_schedules = ProjectSchedule.objects.all()
 
     # Fetch all faculty members
     faculties = Faculty.objects.all()
@@ -71,7 +71,7 @@ def subjects_and_schedules(request):
     # You can add more context data if needed
 
     context = {
-        'subjects': subjects,
+        'project': subjects,
         'class_schedules': class_schedules,
         'faculties': faculties,
     }
@@ -91,6 +91,6 @@ def calendra(request):
 
 
 def data(request):
-    data=Subject.objects.all()
+    data=project.objects.all()
     context={"data":data}
     return JsonResponse(request,context)

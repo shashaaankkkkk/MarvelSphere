@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Subject , ClassSchedule , Faculty
+from .models import project ,ProjectSchedule, Faculty  , Student
 # Register your models here.
-admin.site.register([Subject,ClassSchedule,Faculty])
+admin.site.register([project,ProjectSchedule,Faculty,Student])

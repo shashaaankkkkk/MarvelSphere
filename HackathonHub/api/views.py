@@ -8,6 +8,8 @@ def hello(request):
     return JsonResponse({"messgae":"hello"})
 
 def subject(request):
-    subject=list(models.Subject.objects.all().values())
-    print(subject)
-    return JsonResponse(subject,safe=False)
+    projects = models.project.objects.all().values(
+        'id', 'project_id', 'name', 'description', 'department', 'semester_year',
+        'instructors__name', 'student__name', 'textbooks_materials', 'assessment_methods_syllabus'
+    )
+    return JsonResponse(list(projects),safe=False)
