@@ -1,8 +1,7 @@
 import textwrap
 from IPython.display import Markdown
 import google.generativeai as genai
-from .models import ClassSchedule
-
+from .models import ClassSchedule , Subject 
 from django.shortcuts import render , redirect
 from django.http import HttpResponse ,JsonResponse
 from django.contrib.auth.decorators import login_required
@@ -89,3 +88,9 @@ def assigments(request):
 
 def calendra(request):
     return render(request,"calendar.html")
+
+
+def data(request):
+    data=Subject.objects.all()
+    context={"data":data}
+    return JsonResponse(request,context)
